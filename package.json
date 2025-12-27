@@ -1,0 +1,9 @@
+﻿{
+  "name": "rpg-tormenta-app",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ]
+}

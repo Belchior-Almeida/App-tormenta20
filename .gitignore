@@ -1,0 +1,18 @@
+﻿# Node
+node_modules/
+
+# Expo
+.expo/
+.expo-shared/
+web-build/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Env
+.env
+
+# Misc
+.DS_Store
