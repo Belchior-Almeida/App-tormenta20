@@ -1,14 +1,17 @@
-﻿import { Link } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
-export default function WelcomeScreen() {
+type WelcomeScreenProps = {
+  onBack: () => void;
+};
+
+export default function WelcomeScreen({ onBack }: WelcomeScreenProps) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Bem-vindo ao RPG Tormenta</Text>
       <Text style={styles.subtitle}>Sua jornada comeca aqui.</Text>
-      <Link style={styles.button} href="/">
-        Voltar
-      </Link>
+      <Pressable style={styles.button} onPress={onBack}>
+        <Text style={styles.buttonText}>Voltar</Text>
+      </Pressable>
     </View>
   );
 }
@@ -35,10 +38,12 @@ const styles = StyleSheet.create({
   button: {
     paddingVertical: 12,
     paddingHorizontal: 24,
-    textAlign: "center",
+    alignItems: "center",
     backgroundColor: "#3a7afe",
+    borderRadius: 8
+  },
+  buttonText: {
     color: "#ffffff",
-    borderRadius: 8,
     fontWeight: "600"
   }
 });

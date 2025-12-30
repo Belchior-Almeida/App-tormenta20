@@ -1,7 +1,10 @@
-﻿import { Link } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
-export default function LoginScreen() {
+type LoginScreenProps = {
+  onSubmit: () => void;
+};
+
+export default function LoginScreen({ onSubmit }: LoginScreenProps) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Entrar</Text>
@@ -9,9 +12,9 @@ export default function LoginScreen() {
       <View style={styles.input} />
       <Text style={styles.label}>Senha</Text>
       <View style={styles.input} />
-      <Link style={styles.button} href="/welcome">
-        Acessar
-      </Link>
+      <Pressable style={styles.button} onPress={onSubmit}>
+        <Text style={styles.buttonText}>Acessar</Text>
+      </Pressable>
     </View>
   );
 }
@@ -44,10 +47,12 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 8,
     paddingVertical: 12,
-    textAlign: "center",
+    alignItems: "center",
     backgroundColor: "#3a7afe",
+    borderRadius: 8
+  },
+  buttonText: {
     color: "#ffffff",
-    borderRadius: 8,
     fontWeight: "600"
   }
 });

@@ -1,9 +1,8 @@
-﻿{
+{
   "expo": {
     "name": "RPG Tormenta",
     "slug": "rpg-tormenta",
     "scheme": "rpg-tormenta",
-    "plugins": ["expo-router"],
     "extra": {
       "eas": {
         "projectId": ""
